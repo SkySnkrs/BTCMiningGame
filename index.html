@@ -52,13 +52,13 @@
                     class="fs-2 ButtonFont">0</span>
             </div>
         </section>
-        <section class="row d-flex justify-content-center darkOrange  tiny5-regular">
-            <div class="col-md-6 col-12">
+        <section class="row d-flex justify-content-center darkOrange tiny5-regular">
+            <div class="col-md-6 col-12 sectionMinHeight">
                 <section class="row ">
                     <div class="col-6 mt-3">
-                        <div class="bg-dark rounded p-3">
+                        <div class="bg-dark rounded p-3 statsColumn">
                             <h5>CLICK UPGRADES</h5>
-                            <p>Per Click</p>
+                            <p class="fw-bold text-center">Per Click</p>
                             <div class="p-3">
                                 <button onclick="upgradeItem('Pickaxe')"
                                     class="rounded text-dark btcBgColor fs-4"></span>Pickaxe</button>&nbsp;-&nbsp;<span
@@ -72,9 +72,9 @@
                         </div>
                     </div>
                     <div class="col-6 mt-3">
-                        <div class="bg-dark rounded p-3">
+                        <div class="bg-dark rounded p-3 statsColumn">
                             <h5>AUTO MINE UPGRADES</h5>
-                            <p>2 Second Interval</p>
+                            <p class="fw-bold text-center">2 Second Interval</p>
                             <div class="p-3">
                                 <button onclick="upgradeItem('Gpu')"
                                     class="rounded text-dark btcBgColor fs-4"></span>Gpu</button>&nbsp;-&nbsp;<span
@@ -94,13 +94,37 @@
             <div class="col-md-6 col-12">
                 <section class="row ">
                     <div class="col-6 mt-3">
-                        <div class="bg-dark rounded p-3">
-                            <h5>CLICK STATS</h5>
+                        <div class="bg-dark rounded p-3 d-flex statsColumn">
+                            <div class="text-center flex-fill">
+                                <h5>CLICK STATS</h5>
+                                <p class="fw-bold">Level --> Mining Rate</p>
+                                <div class="d-flex justify-content-evenly mt-3">
+                                    <p class="text-start fs-3" id="pickaxeLevel">0</p>
+                                    <p class="text-center fs-3">PICKAXE</p>
+                                    <p class="text-end fs-3" id="pickaxeMiningRate">0</p>
+                                </div>
+                                <div class="d-flex justify-content-evenly mt-3">
+                                    <p class="text-start fs-3" id="drillLevel">0</p>
+                                    <p class="text-center fs-3">DRILL</p>
+                                    <p class="text-end fs-3" id="drillMiningRate">0</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-6 mt-3">
-                        <div class="bg-dark rounded p-3">
+                        <div class="bg-dark rounded p-3 d-flex flex-column statsColumn">
                             <h5>AUTO MINE STATS</h5>
+                            <p class="fw-bold">Level --> Mining Rate</p>
+                            <div class="d-flex justify-content-evenly mt-3">
+                                <p class="text-start fs-3" id="gpuLevel">0</p>
+                                <p class="text-center fs-3">GPU</p>
+                                <p class="text-end fs-3" id="gpuMiningRate">0</p>
+                            </div>
+                            <div class="d-flex justify-content-evenly mt-3">
+                                <p class="text-start fs-3" id="nasaPcLevel">0</p>
+                                <p class="text-center fs-3">NASA PC</p>
+                                <p class="text-end fs-3" id="nasaPcMiningRate">0</p>
+                            </div>
                         </div>
                     </div>
                 </section>

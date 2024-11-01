@@ -74,6 +74,7 @@ function upgradeItem(itemName) {
                 upgrade.cost = Math.round(upgradeTotal);
 
                 drawStats()
+                drawLevels()
                 totalMine();
                 drawTotalEarning();
                 drawIntervalEarnings()
@@ -107,11 +108,43 @@ function autoMineBtc() {
 const btcBalance = document.getElementById('btcAmount')
 const clickAmount = document.getElementById('clickAmount')
 const intervalAmount = document.getElementById('intervalAmount')
+
 const Gpu = document.getElementById('Gpu')
 const nasaPc = document.getElementById('NasaPc')
 const Drill = document.getElementById('Drill')
 const Pickaxe = document.getElementById('Pickaxe')
 
+const pickaxeLevel = document.getElementById('pickaxeLevel')
+const drillLevel = document.getElementById('drillLevel')
+const gpuLevel = document.getElementById('gpuLevel')
+const nasaPcLevel = document.getElementById('nasaPcLevel')
+
+const pickaxeMiningRate = document.getElementById('pickaxeMiningRate')
+const drillMiningRate = document.getElementById('drillMiningRate')
+const gpuMiningRate = document.getElementById('drillMiningRate')
+const nasaPcMiningRate = document.getElementById('nasaPcMiningRate')
+
+function drawLevels() {
+    for (let i = 0; i < upgrades.length; i++) {
+        const upgrade = upgrades[i];
+        if (upgrade.name == 'Pickaxe') {
+            pickaxeLevel.innerText = ''
+            pickaxeLevel.innerText = upgrade.level;
+        }
+        if (upgrade.name == 'Drill') {
+            drillLevel.innerText = ''
+            drillLevel.innerText = upgrade.level;
+        }
+        if (upgrade.name == 'Gpu') {
+            gpuLevel.innerText = ''
+            gpuLevel.innerText = upgrade.level;
+        }
+        if (upgrade.name == 'Nasa Pc') {
+            nasaPcLevel.innerText = ''
+            nasaPcLevel.innerText = upgrade.level;
+        }
+    }
+}
 function drawBtc() {
     btcBalance.innerText = ''
     btcBalance.innerText += btc

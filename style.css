@@ -73,4 +73,12 @@
     background-color: rgb(255 234 148);
 }
 
+.statsColumn {
+    min-height: 40dvh;
+}
+
+.sectionMinHeight {
+    min-height: 45dvh;
+}
+
 /* IDS */
