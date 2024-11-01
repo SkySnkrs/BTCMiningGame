@@ -74,7 +74,6 @@ function upgradeItem(itemName) {
                 upgrade.cost = Math.round(upgradeTotal);
 
                 drawStats()
-                drawLevels()
                 totalMine();
                 drawTotalEarning();
                 drawIntervalEarnings()
@@ -121,30 +120,9 @@ const nasaPcLevel = document.getElementById('nasaPcLevel')
 
 const pickaxeMiningRate = document.getElementById('pickaxeMiningRate')
 const drillMiningRate = document.getElementById('drillMiningRate')
-const gpuMiningRate = document.getElementById('drillMiningRate')
+const gpuMiningRate = document.getElementById('gpuMiningRate')
 const nasaPcMiningRate = document.getElementById('nasaPcMiningRate')
 
-function drawLevels() {
-    for (let i = 0; i < upgrades.length; i++) {
-        const upgrade = upgrades[i];
-        if (upgrade.name == 'Pickaxe') {
-            pickaxeLevel.innerText = ''
-            pickaxeLevel.innerText = upgrade.level;
-        }
-        if (upgrade.name == 'Drill') {
-            drillLevel.innerText = ''
-            drillLevel.innerText = upgrade.level;
-        }
-        if (upgrade.name == 'Gpu') {
-            gpuLevel.innerText = ''
-            gpuLevel.innerText = upgrade.level;
-        }
-        if (upgrade.name == 'Nasa Pc') {
-            nasaPcLevel.innerText = ''
-            nasaPcLevel.innerText = upgrade.level;
-        }
-    }
-}
 function drawBtc() {
     btcBalance.innerText = ''
     btcBalance.innerText += btc
@@ -164,20 +142,53 @@ function drawStats() {
     for (let i = 0; i < upgrades.length; i++) {
         const upgrade = upgrades[i];
         if (upgrade.name == 'Gpu') {
+            let gpuMiningLevel = 0
+            gpuMiningLevel = upgrade.level * upgrade.miningRate
+
             Gpu.innerText = ''
+            gpuLevel.innerText = ''
+            gpuMiningRate.innerText = ''
+
             Gpu.innerText = upgrade.cost;
+            gpuLevel.innerText = upgrade.level;
+            gpuMiningRate.innerText += gpuMiningLevel
+
         }
         if (upgrade.name == 'Nasa Pc') {
+            let nasaPcMiningLevel = 0
+            nasaPcMiningLevel = upgrade.level * upgrade.miningRate
+
             nasaPc.innerText = ''
+            nasaPcLevel.innerText = ''
+            nasaPcMiningRate.innerText = ''
+
             nasaPc.innerText = upgrade.cost;
+            nasaPcLevel.innerText = upgrade.level;
+            nasaPcMiningRate.innerText += nasaPcMiningLevel
         }
         if (upgrade.name == 'Drill') {
+            let drillMiningLevel = 0
+            drillMiningLevel = upgrade.level * upgrade.miningRate
+
             Drill.innerText = ''
+            drillLevel.innerText = ''
+            drillMiningRate.innerText = ''
+
             Drill.innerText = upgrade.cost;
+            drillLevel.innerText = upgrade.level;
+            drillMiningRate.innerText += drillMiningLevel
         }
         if (upgrade.name == 'Pickaxe') {
+            let pickAxeMining = 0
+            pickAxeMining = upgrade.level * upgrade.miningRate
+
             Pickaxe.innerText = ''
+            pickaxeMiningRate.innerText = ''
+            pickaxeLevel.innerText = ''
+
             Pickaxe.innerText = upgrade.cost;
+            pickaxeLevel.innerText = upgrade.level;
+            pickaxeMiningRate.innerText += pickAxeMining
         }
     }
 }
