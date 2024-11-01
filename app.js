@@ -97,8 +97,6 @@ function autoMineBtc() {
     drawBtc()
 }
 
-
-
 //#endregion
 
 
@@ -122,6 +120,8 @@ const pickaxeMiningRate = document.getElementById('pickaxeMiningRate')
 const drillMiningRate = document.getElementById('drillMiningRate')
 const gpuMiningRate = document.getElementById('gpuMiningRate')
 const nasaPcMiningRate = document.getElementById('nasaPcMiningRate')
+
+const miningRate = document.getElementById('miningPerSecond')
 
 function drawBtc() {
     btcBalance.innerText = ''
@@ -196,3 +196,4 @@ function drawStats() {
 
 
 setInterval(autoMineBtc, 2000)
+setInterval(MiningPerSecond, 1000)
