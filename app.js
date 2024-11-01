@@ -68,6 +68,24 @@ function totalMine() {
     }
 }
 
+function upgradeItem(itemName) {
+    for (let i = 0; i < upgrades.length; i++) {
+        const upgrade = upgrades[i];
+        if (itemName == upgrade.name) {
+            if (btc >= upgrade.cost) {
+                btc -= upgrade.cost
+                upgrade.level++
+                console.log('successful purchase', upgrade.level)
+            } else {
+                console.log('cannot afford this item')
+            }
+
+        } else {
+            console.log('item not found')
+        }
+
+    }
+}
 
 
 function mineBtc() {
@@ -81,7 +99,6 @@ function autoMineBtc() {
 }
 
 
-setInterval(autoMineBtc, 3000)
 
 //#endregion
 
@@ -91,3 +108,5 @@ setInterval(autoMineBtc, 3000)
 
 //#endregion
 
+
+setInterval(autoMineBtc, 3000)

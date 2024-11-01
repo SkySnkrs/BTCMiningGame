@@ -2,9 +2,12 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Tiny5&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -17,11 +20,11 @@
     <title>BTC Mining Game</title>
 </head>
 
-<body>
+<body class="bg-dark btcColor">
     <header class="container-fluid">
         <section class="row bg-dark border-secondary">
             <div class="col p-3">
-                <h2 class="text-start text-light tiny5-regular">
+                <h2 class="text-start btcColor tiny5-regular">
                     BTC MINING GAME
                 </h2>
             </div>
@@ -30,27 +33,79 @@
     <main class="container-fluid bgImage align-content-center">
         <section class="row">
             <div class="col">
-                <img onclick="mineBtc()" class="btcLogo img-center" src="btc-logo.png" alt="">
+                <img onclick="mineBtc()" class="btcLogo img-center clickable-image" src="btc-logo.png" alt="">
             </div>
         </section>
     </main>
     <footer class="container-fluid">
-        <section class="row mt-5 d-flex justify-content-center">
-
+        <section class="row d-flex justify-content-center align-items-end tiny5-regular text-center text-dark mt-3 ">
+            <div class="col-2 item rounded-top">
+                <span class="mdi mdi-gesture-tap-button fs-2"></span>&nbsp;&nbsp;&nbsp;<span id="clickAmount"
+                    class="fs-2">1</span>
+            </div>
+            <div class="col-3 centerBTC rounded-top">
+                <span class="mdi mdi-currency-btc fs-2"></span>
+                <div id="btcAmount" class="fs-2">0</div>
+            </div>
+            <div class="col-2 item rounded-top">
+                <span class="mdi mdi-timer-plus-outline fs-2"></span>&nbsp;&nbsp;&nbsp;<span id="intervalAmount"
+                    class="fs-2">0</span>
+            </div>
+        </section>
+        <section class="row d-flex justify-content-center darkOrange  tiny5-regular">
             <div class="col-md-6 col-12">
-                <section class="row">
-                    <div class="col-6">HERE IS THE ITEMS</div>
-                    <div class="col-6">HERE IS THE ITEMS</div>
+                <section class="row ">
+                    <div class="col-6 mt-3">
+                        <div class="bg-dark rounded p-3">
+                            <h5>CLICK UPGRADES</h5>
+                            <div class="p-3">
+                                <button onclick="upgradeItem('Pickaxe')" class="rounded text-dark btcBgColor fs-4"><span
+                                        class="mdi mdi-currency-btc"></span>&nbsp;&nbsp;&nbsp;
+                                    10</button>&nbsp;&nbsp;&nbsp;<span class="fs-4 ButtonFont">Pickaxe
+                                    +1</span>
+                            </div>
+                            <div class="p-3">
+                                <button onclick="upgradeItem('Drill')" class="rounded text-dark btcBgColor fs-4"><span
+                                        class="mdi mdi-currency-btc"></span>&nbsp;&nbsp;&nbsp;
+                                    50</button>&nbsp;&nbsp;&nbsp;<span class="ButtonFont fs-4">Drill
+                                    +5</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 mt-3">
+                        <div class="bg-dark rounded p-3">
+                            <h5>AUTO MINE UPGRADES</h5>
+                            <div class="p-3">
+                                <button onclick="upgradeItem('Gpu')" class="rounded text-dark btcBgColor fs-4"><span
+                                        class="mdi mdi-currency-btc "></span>&nbsp;&nbsp;
+                                    1000</button>&nbsp;&nbsp;&nbsp;<span class="fs-4 ButtonFont">Gpu
+                                    +10</span>
+                            </div>
+                            <div class="p-3">
+                                <button onclick="upgradeItem('Nasa Pc')" class="rounded text-dark btcBgColor fs-4"><span
+                                        class="mdi mdi-currency-btc"></span>&nbsp; 10000</button>&nbsp;&nbsp;&nbsp;<span
+                                    class="fs-6 ButtonFont">Nasa Pc +100
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </div>
 
             <div class="col-md-6 col-12">
-                <section class="row">
-                    <div class="col-6">HERE IS THE STATS</div>
-                    <div class="col-6">HERE IS THE STATS</div>
+                <section class="row ">
+                    <div class="col-6 mt-3">
+                        <div class="bg-dark rounded p-3">
+                            <h5>CLICK STATS</h5>
+                        </div>
+                    </div>
+                    <div class="col-6 mt-3">
+                        <div class="bg-dark rounded p-3">
+                            <h5>AUTO MINE STATS</h5>
+                        </div>
+                    </div>
                 </section>
             </div>
-
         </section>
     </footer>
 

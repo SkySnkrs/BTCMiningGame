@@ -7,6 +7,10 @@
     min-height: 60dvh;
 }
 
+.btcColor {
+    color: rgb(255 234 148)
+}
+
 /* FONTS */
 .tiny5-regular {
     font-family: "Tiny5", sans-serif;
@@ -14,11 +18,44 @@
     font-style: normal;
 }
 
+.noto-serif-font {
+    font-family: "Noto Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CryptoCrash;
+    src: url('CryptoCrash-K7jWe.ttf');
+}
+
+.ButtonFont {
+    font-family: CryptoCrash
+}
+
 /* CLASSES */
+.btcColor {
+    color: rgb(255 234 148)
+}
+
+.btcBgColor {
+    background-color: rgb(255 234 148)
+}
+
+.darkOrange {
+    background-color: rgb(250 163 0) !important
+}
 
 .btcLogo {
     height: 45dvh;
     width: 45dvh;
+}
+
+.clickable-image {
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 .img-center {
@@ -26,5 +63,14 @@
     margin: 0 auto;
 }
 
+.centerBTC {
+    height: 15dvh;
+    background-color: rgb(250 163 0);
+}
+
+.item {
+    height: 10dvh;
+    background-color: rgb(255 234 148);
+}
 
 /* IDS */
