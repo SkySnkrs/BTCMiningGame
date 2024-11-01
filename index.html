@@ -41,15 +41,15 @@
         <section class="row d-flex justify-content-center align-items-end tiny5-regular text-center text-dark mt-3 ">
             <div class="col-2 item rounded-top">
                 <span class="mdi mdi-gesture-tap-button fs-2"></span>&nbsp;&nbsp;&nbsp;<span id="clickAmount"
-                    class="fs-2">1</span>
+                    class="fs-2 ButtonFont">1</span>
             </div>
             <div class="col-3 centerBTC rounded-top">
                 <span class="mdi mdi-currency-btc fs-2"></span>
-                <div id="btcAmount" class="fs-2">0</div>
+                <div id="btcAmount" class="fs-2 ButtonFont">0</div>
             </div>
             <div class="col-2 item rounded-top">
                 <span class="mdi mdi-timer-plus-outline fs-2"></span>&nbsp;&nbsp;&nbsp;<span id="intervalAmount"
-                    class="fs-2">0</span>
+                    class="fs-2 ButtonFont">0</span>
             </div>
         </section>
         <section class="row d-flex justify-content-center darkOrange  tiny5-regular">
@@ -58,34 +58,33 @@
                     <div class="col-6 mt-3">
                         <div class="bg-dark rounded p-3">
                             <h5>CLICK UPGRADES</h5>
+                            <p>Per Click</p>
                             <div class="p-3">
-                                <button onclick="upgradeItem('Pickaxe')" class="rounded text-dark btcBgColor fs-4"><span
-                                        class="mdi mdi-currency-btc"></span>&nbsp;&nbsp;&nbsp;
-                                    10</button>&nbsp;&nbsp;&nbsp;<span class="fs-4 ButtonFont">Pickaxe
-                                    +1</span>
+                                <button onclick="upgradeItem('Pickaxe')"
+                                    class="rounded text-dark btcBgColor fs-4"></span>Pickaxe</button>&nbsp;-&nbsp;<span
+                                    class="mdi mdi-currency-btc"><span class="fs-4" id="Pickaxe">10</span>
                             </div>
                             <div class="p-3">
-                                <button onclick="upgradeItem('Drill')" class="rounded text-dark btcBgColor fs-4"><span
-                                        class="mdi mdi-currency-btc"></span>&nbsp;&nbsp;&nbsp;
-                                    50</button>&nbsp;&nbsp;&nbsp;<span class="ButtonFont fs-4">Drill
-                                    +5</span>
+                                <button onclick="upgradeItem('Drill')"
+                                    class="rounded text-dark btcBgColor fs-4"></span>Drill</button>&nbsp;-&nbsp;<span
+                                    class="mdi mdi-currency-btc"><span class="fs-4" id="Drill">50</span>
                             </div>
                         </div>
                     </div>
                     <div class="col-6 mt-3">
                         <div class="bg-dark rounded p-3">
                             <h5>AUTO MINE UPGRADES</h5>
+                            <p>2 Second Interval</p>
                             <div class="p-3">
-                                <button onclick="upgradeItem('Gpu')" class="rounded text-dark btcBgColor fs-4"><span
-                                        class="mdi mdi-currency-btc "></span>&nbsp;&nbsp;
-                                    1000</button>&nbsp;&nbsp;&nbsp;<span class="fs-4 ButtonFont">Gpu
-                                    +10</span>
+                                <button onclick="upgradeItem('Gpu')"
+                                    class="rounded text-dark btcBgColor fs-4"></span>Gpu</button>&nbsp;-&nbsp;<span
+                                    class="mdi mdi-currency-btc"><span class="fs-4" id="Gpu">1000</span>
                             </div>
                             <div class="p-3">
-                                <button onclick="upgradeItem('Nasa Pc')" class="rounded text-dark btcBgColor fs-4"><span
-                                        class="mdi mdi-currency-btc"></span>&nbsp; 10000</button>&nbsp;&nbsp;&nbsp;<span
-                                    class="fs-6 ButtonFont">Nasa Pc +100
-                                </span>
+                                <button onclick="upgradeItem('Nasa Pc')"
+                                    class="rounded text-dark btcBgColor fs-4"></span>Nasa
+                                    Pc</button>&nbsp;-&nbsp;<span class="mdi mdi-currency-btc"><span class="fs-4"
+                                        id="NasaPc">10000</span>
                             </div>
                         </div>
                     </div>

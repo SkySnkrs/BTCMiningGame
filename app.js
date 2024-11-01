@@ -45,45 +45,42 @@ const upgrades = [
 //#endregion
 
 //#region FUNCTIONS AND LOGIC
-
 function totalMine() {
+    totalEarning = 1;
+    totalAutoEarning = 0;
+
     for (let i = 0; i < upgrades.length; i++) {
         const upgrade = upgrades[i];
-
-        if (upgrade.previousLevel === undefined) {
-            upgrade.previousLevel = 0;
+        if (upgrade.auto == false && upgrade.level >= 1) {
+            totalEarning += upgrade.level * upgrade.miningRate;
         }
-
-        if (upgrade.level > upgrade.previousLevel) {
-            if (upgrade.auto == false && upgrade.level >= 1) {
-                totalEarning += (upgrade.level - upgrade.previousLevel) * upgrade.miningRate;
-                console.log(totalEarning)
-            }
-            if (upgrade.auto == true && upgrade.level >= 1) {
-                totalAutoEarning += (upgrade.level - upgrade.previousLevel) * upgrade.miningRate;
-                console.log(totalAutoEarning)
-            }
-            upgrade.previousLevel = upgrade.level;
+        if (upgrade.auto == true && upgrade.level >= 1) {
+            totalAutoEarning += upgrade.level * upgrade.miningRate;
         }
     }
 }
 
 function upgradeItem(itemName) {
+
     for (let i = 0; i < upgrades.length; i++) {
         const upgrade = upgrades[i];
         if (itemName == upgrade.name) {
             if (btc >= upgrade.cost) {
-                btc -= upgrade.cost
-                upgrade.level++
-                console.log('successful purchase', upgrade.level)
-            } else {
-                console.log('cannot afford this item')
+                upgrade.level++;
+                btc -= upgrade.cost;
+                drawBtc();
+
+                let upgradeTotal = upgrade.cost * upgrade.upgradeCostMultiplier;
+                upgrade.cost = Math.round(upgradeTotal);
+
+                drawStats()
+                totalMine();
+                drawTotalEarning();
+                drawIntervalEarnings()
+
+
             }
-
-        } else {
-            console.log('item not found')
         }
-
     }
 }
 
@@ -91,11 +88,13 @@ function upgradeItem(itemName) {
 function mineBtc() {
     totalMine()
     btc += totalEarning
+    drawBtc()
 }
 
 function autoMineBtc() {
     totalMine()
     btc += totalAutoEarning
+    drawBtc()
 }
 
 
@@ -105,8 +104,51 @@ function autoMineBtc() {
 
 //#region DRAWING ITEMS TO PAGE
 
+const btcBalance = document.getElementById('btcAmount')
+const clickAmount = document.getElementById('clickAmount')
+const intervalAmount = document.getElementById('intervalAmount')
+const Gpu = document.getElementById('Gpu')
+const nasaPc = document.getElementById('NasaPc')
+const Drill = document.getElementById('Drill')
+const Pickaxe = document.getElementById('Pickaxe')
 
+function drawBtc() {
+    btcBalance.innerText = ''
+    btcBalance.innerText += btc
+}
+
+function drawTotalEarning() {
+    clickAmount.innerText = ''
+    clickAmount.innerText += totalEarning
+}
+
+function drawIntervalEarnings() {
+    intervalAmount.innerText = ''
+    intervalAmount.innerText += totalAutoEarning
+}
+
+function drawStats() {
+    for (let i = 0; i < upgrades.length; i++) {
+        const upgrade = upgrades[i];
+        if (upgrade.name == 'Gpu') {
+            Gpu.innerText = ''
+            Gpu.innerText = upgrade.cost;
+        }
+        if (upgrade.name == 'Nasa Pc') {
+            nasaPc.innerText = ''
+            nasaPc.innerText = upgrade.cost;
+        }
+        if (upgrade.name == 'Drill') {
+            Drill.innerText = ''
+            Drill.innerText = upgrade.cost;
+        }
+        if (upgrade.name == 'Pickaxe') {
+            Pickaxe.innerText = ''
+            Pickaxe.innerText = upgrade.cost;
+        }
+    }
+}
 //#endregion
 
 
-setInterval(autoMineBtc, 3000)
+setInterval(autoMineBtc, 2000)
