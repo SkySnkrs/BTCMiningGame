@@ -196,4 +196,3 @@ function drawStats() {
 
 
 setInterval(autoMineBtc, 2000)
-setInterval(MiningPerSecond, 1000)
