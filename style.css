@@ -1,0 +1,30 @@
+/* SECTIONS */
+
+.bgImage {
+    background-image: url(backgroundImage.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 60dvh;
+}
+
+/* FONTS */
+.tiny5-regular {
+    font-family: "Tiny5", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* CLASSES */
+
+.btcLogo {
+    height: 45dvh;
+    width: 45dvh;
+}
+
+.img-center {
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* IDS */
